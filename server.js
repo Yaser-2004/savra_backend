@@ -11,7 +11,10 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://savra-delta.vercel.app", "http://localhost:5173"],
+    credentials: true
+}));
 app.use(express.json());
 
 // serve generated PPT files
